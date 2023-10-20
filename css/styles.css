@@ -2,15 +2,48 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('../assets/background_large.png') no-repeat center center fixed;
+  background: url('../assets/background_ultrawide.png') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   overflow: hidden;
+  min-width: 600px;
+  /*TODO figure out how to set a min-width that actually works*/
 }
 
 /* Additional styles for content on the page */
 .content {
   text-align: center;
-  padding: 20px;
-  color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: gold;
+  text-shadow: #000 10px 15px 15px;
+}
+
+#game-title {
+  font-size: 10vmax;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#game-subtitle {
+  font-size: 3vmax;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Desktop Styles */
+@media (min-width: 1200px) and (max-width: 1900px) {
+  .bg.bg-lg {
+    background: url('../assets/background_desktop.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 965px) and (max-width: 1199px) {
+  .bg.bg-md {
+    background: url('../assets/background_laptop.png') no-repeat center center fixed;
+    background-size: cover;
+  }
 }
