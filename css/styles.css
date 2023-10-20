@@ -1,0 +1,16 @@
+/* CSS for the background image */
+body {
+  margin: 0;
+  padding: 0;
+  background: url('../assets/background_large.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Additional styles for content on the page */
+.content {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
