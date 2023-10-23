@@ -4,14 +4,36 @@
       <meta charset="UTF-8">
       <title>Plunder Online</title>
       <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </head>
   <body class="bg bg-lg bg-md">
       <div class="content">
           <h1 id="game-title">Plunder</h1>
           <h2 id="game-subtitle">A Pirates Life</h2>
-          <div id="start-game">
-            <button>Start Game</button>
+          <div class="btn-container">
+            <button id="play-now-btn" class="btn">Play Now</button>
           </div>
+      </div>
+      <div id="play-game-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <i class="fa fa-anchor"></i>
+            <span class="modal-title">Avast!</span>
+            <span class="modal-close" data-close="play-game-modal">x</span>
+          </div>
+          <p>How many swashbucklers will be sailing the high seas?</p>
+          <div class="modal-body">
+            <div id="num-players">
+              <img src="./assets/3_player_icon.png" />
+              <img src="./assets/4_player_icon.png" />
+              <img src="./assets/5_player_icon.png" />
+              <img src="./assets/6_player_icon.png" />
+            </div>
+          </div>
+          <div class="btn-container">
+            <button id="start-game-btn" class="btn">Start</button>
+          </div>
+        </div>
       </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
