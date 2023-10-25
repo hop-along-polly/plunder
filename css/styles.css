@@ -143,6 +143,10 @@ body {
   width: 100px;
 }
 
+#num-players img.selected {
+  background-color: #44cfcc;
+}
+
 /* Desktop Styles */
 @media (min-width: 1200px) and (max-width: 1900px) {
   .bg.bg-lg {
