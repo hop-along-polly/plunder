@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Plunder Online</title>
+      <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+      <link rel="stylesheet" type="text/css" href="./css/modals.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+  <body>
+    <div id="create-player-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fa fa-anchor"></i>
+          <span class="modal-title">Ahoy Matey!</span>
+          <span class="modal-close"></span>
+        </div>
+        <p>Who be the captain of this crew?</p>
+        <div class="modal-body">
+          <form>
+            <label>Captain's Name</label>
+            <input id="player-name" type="text"></input>
+            <label>Choose a color for yer ships</label>
+            <ul id="player-colors">
+              <li data-color="#5d524f"></li>
+              <li data-color="#44cfcc"></li>
+              <li data-color="#fd993d"></li>
+              <li data-color="#829e4a"></li>
+              <li data-color="#995a6d"></li>
+              <li data-color="#fecc6d"></li>
+            </ul>
+            <div class="btn-container">
+              <button id="create-player-btn" class="btn">Next Captain</button>
+            </div>
+            <p id="create-player-error"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="./js/scripts.js"></script>
+</html>
