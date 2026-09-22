@@ -15,15 +15,13 @@ const closeModal = (event) => {
 }
 
 const getNumPlayers = () => {
-  return localStorage.getItem('num-players');
+  return parseInt(localStorage.getItem('num-players'));
 }
 
 const saveNumPlayers = (e) => {
   const target = $(e.target)
   localStorage.setItem('num-players', target.data('num-players'));
   localStorage.removeItem('players');
-  
-  console.log(target);
   // clear the previous selection before highlighting the new selection
   target.siblings('.selected').removeClass('selected');
   target.addClass('selected');
@@ -96,15 +94,27 @@ const createPlayer = (e) => {
 }
 
 const pageLoad = () => {
+  // only the create player page has a crew to muster
+  if ($('#create-player-modal').length === 0) {
+    return;
+  }
+
   const players = getPlayers();
   const numPlayers = getNumPlayers();
+
+  // no crew size was chosen, so send them back to pick one
+  if (!numPlayers) {
+    document.location.href = './index.html';
+    return;
+  }
 
   if (players.length < numPlayers) {
     loadCreatePlayerModal(numPlayers, players);
   } else {
-    // TODO this is where I would navigate to either the large board or the small board
+    // TODO send them to either the large board or the small board
     // based on the number of players
     $('#create-player-modal').css('display', 'none');
+    document.location.href = './gameboard.html';
   }
 }
 
