@@ -22,8 +22,7 @@ const saveNumPlayers = (e) => {
   const target = $(e.target)
   localStorage.setItem('num-players', target.data('num-players'));
   localStorage.removeItem('players');
-  
-  console.log(target);
+
   // clear the previous selection before highlighting the new selection
   target.siblings('.selected').removeClass('selected');
   target.addClass('selected');
@@ -102,9 +101,8 @@ const pageLoad = () => {
   if (players.length < numPlayers) {
     loadCreatePlayerModal(numPlayers, players);
   } else {
-    // TODO this is where I would navigate to either the large board or the small board
-    // based on the number of players
-    $('#create-player-modal').css('display', 'none');
+    // Navigate to the gameboard after all players are created
+    document.location.href = './gameboard.html';
   }
 }
 
@@ -115,4 +113,7 @@ $('#play-game-modal').delegate('#num-players > img', 'click', saveNumPlayers);
 $('#create-player-modal').delegate('#player-colors > li', 'click', selectPlayerColor);
 $('#create-player-btn').on('click', createPlayer);
 
-pageLoad();
+// Only run pageLoad on players.html
+if (window.location.pathname.includes('players.html')) {
+  pageLoad();
+}
